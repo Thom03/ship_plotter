@@ -42,16 +42,6 @@
     <string>API KEY </string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="ApiKeyEdit">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>50</y>
-     <width>311</width>
-     <height>25</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
@@ -65,50 +55,10 @@
     <string>Min Lat</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="MinLatEdit">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>180</y>
-     <width>113</width>
-     <height>25</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="MinLogEdit">
-   <property name="geometry">
-    <rect>
-     <x>240</x>
-     <y>240</y>
-     <width>113</width>
-     <height>25</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="MaxLogEdit">
-   <property name="geometry">
-    <rect>
-     <x>230</x>
-     <y>120</y>
-     <width>113</width>
-     <height>25</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="MaxLatEdit">
-   <property name="geometry">
-    <rect>
-     <x>410</x>
-     <y>180</y>
-     <width>113</width>
-     <height>25</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>190</x>
      <y>240</y>
      <width>67</width>
      <height>17</height>
@@ -121,8 +71,8 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>120</y>
+     <x>190</x>
+     <y>110</y>
      <width>67</width>
      <height>17</height>
     </rect>
@@ -134,7 +84,7 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>400</x>
      <y>180</y>
      <width>67</width>
      <height>17</height>
@@ -144,21 +94,11 @@
     <string>Max Lat</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="TimeSpanEdit">
-   <property name="geometry">
-    <rect>
-     <x>120</x>
-     <y>290</y>
-     <width>271</width>
-     <height>25</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>290</y>
+     <y>300</y>
      <width>67</width>
      <height>17</height>
     </rect>
@@ -167,7 +107,133 @@
     <string>Timespan</string>
    </property>
   </widget>
+  <widget class="QgsFilterLineEdit" name="lineedit_minlat">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>180</y>
+     <width>151</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="qgisRelation" stdset="0">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QgsFilterLineEdit" name="lineedit_maxlat">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>170</y>
+     <width>151</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="qgisRelation" stdset="0">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QgsFilterLineEdit" name="lineedit_maxlog">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>110</y>
+     <width>151</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="qgisRelation" stdset="0">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QgsFilterLineEdit" name="lineedit_minlog">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>240</y>
+     <width>151</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="qgisRelation" stdset="0">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QgsFilterLineEdit" name="lineedit_timespan">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>300</y>
+     <width>151</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="qgisRelation" stdset="0">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QgsFilterLineEdit" name="lineedit_apikey">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>40</y>
+     <width>311</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="qgisRelation" stdset="0">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QgsProjectionSelectionWidget" name="mQgsProjectionSelectionWidget">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>360</y>
+     <width>160</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QgsFilterLineEdit" name="displayResultsBox">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>400</y>
+     <width>531</width>
+     <height>241</height>
+    </rect>
+   </property>
+   <property name="qgisRelation" stdset="0">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>520</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Plot</string>
+   </property>
+  </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QgsFilterLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>qgsfilterlineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QgsProjectionSelectionWidget</class>
+   <extends>QWidget</extends>
+   <header>qgsprojectionselectionwidget.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>

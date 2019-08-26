@@ -29,6 +29,17 @@ from qgis.PyQt.QtWidgets import QAction
 from .resources import *
 # Import the code for the dialog
 from .ship_plotter_dialog import ShipPlotterDialog
+import requests
+import json
+from PyQt5.QtWidgets import QAction, QMessageBox
+from qgis.core import (QgsCoordinateReferenceSystem,
+                       QgsCoordinateTransform,
+                       QgsProject,
+                       QgsRectangle,
+                       QgsPointXY,
+                       QgsGeometry,
+                       QgsVectorLayer,
+                       QgsFeature)
 import os.path
 
 
@@ -197,4 +208,30 @@ class ShipPlotter:
         if result:
             # Do something useful here - delete the line containing pass and
             # substitute with your code.
-            pass
+            lineedit_minlat = self.dlg.lineedit_minlat.value()
+            lineedit_maxlat = self.dlg.lineedit_maxlat.value()
+            lineedit_minlog = self.dlg.lineedit_minlog.value()
+            lineedit_maxlog = self.dlg.lineedit_maxlog.value()
+            base_url = 'https://services.marinetraffic.com/api/exportvessels/v:7/'
+
+            params = {"MINLAT": lineedit_minlat, "MAXLAT": lineedit_maxlat, "MINLON": lineedit_minlog, "MAXLON": lineedit_maxlog, "timespan": 10, "protocol": 'json'}
+
+            response = requests.get(url=base_url, params=params)
+            response_json = response.json()
+
+            if response.status_code == 200:
+                if response_json.get('error'):
+                    QMessageBox.critical(self.iface.mainWindow(),
+                                         "The API Error",
+                                         "The buy request was not processsed succesfully\n\n"
+                                         "Message:\n"
+                                         "{}".format(response.json()))
+                    return
+
+                print(response)
+
+                # Capture relevant response fields
+                x = float(response_json['lon'])
+                y = float(response_json['lat'])
+                address = response_json['display_name']
+                license = response_json['licence']
